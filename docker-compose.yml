@@ -1,0 +1,14 @@
+version: '3.7'
+
+# docker build --no-cache
+# docker-compose build --no-cache
+
+services:
+  backend:
+    container_name: backend
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./.docker/node/Dockerfile
+    ports:
+      - '8080:8080'
